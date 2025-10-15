@@ -1,0 +1,10 @@
+<mat-sidenav-container class="sideNav-container">
+    <mat-sidenav-content class="sideNav-content">
+        <h3>Dashboard</h3>
+        <mat-nav-list class="sideNav-content-list">
+            @for (item of menuItems; track item.label) {
+                <a [routerLink]="item.route">{{item.label}}</a>
+            }
+        </mat-nav-list>
+    </mat-sidenav-content>
+</mat-sidenav-container>
