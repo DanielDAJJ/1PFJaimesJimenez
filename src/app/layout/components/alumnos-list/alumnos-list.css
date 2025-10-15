@@ -1,0 +1,38 @@
+.table-container{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 0.5rem;
+}
+.table-form{
+    grid-column-start: 2;
+    grid-column-end: 12;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    .table-form-label, .table-form-input{
+        color: #3B0270;
+    }
+    .table-form-label{
+        font-weight: 600;
+    }
+}
+.table-alumnos{
+    grid-column-start: 2;
+    grid-column-end: 12;
+    grid-row-start: 3;
+    grid-row-end: 6;
+    background-color: #fffafa;
+    th{
+        color: #6F00FF;
+        font-weight: 900;
+    }
+}
+app-inscription-form{
+    grid-column-start: 2;
+    grid-column-end: 12;
+    grid-row-start: 7;
+    grid-row-end: 13;
+    height: 100%;
+}

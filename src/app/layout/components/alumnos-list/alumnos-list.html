@@ -1,1 +1,39 @@
-<p>alumnos-list works!</p>
+<div class="table-container">
+    <mat-form-field class="table-form">
+        <mat-label class="table-form-label" >Filtro de alumnos</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ej. Juan Pérez" class="table-form-input" #input>
+    </mat-form-field>
+    <table mat-table [dataSource]="dataSource" class="table-alumnos">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>id</th>
+            <td mat-cell *matCellDef="let alumno">{{alumno.id}}</td>
+        </ng-container>
+        <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef>Nombre</th>
+            <td mat-cell *matCellDef="let alumno">{{alumno.nombre}}</td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef>Email</th>
+            <td mat-cell *matCellDef="let alumno">{{alumno.email}}</td>
+        </ng-container>
+        <ng-container matColumnDef="telefono">
+            <th mat-header-cell *matHeaderCellDef>Teléfono</th>
+            <td mat-cell *matCellDef="let alumno">{{alumno.telefono}}</td>
+        </ng-container>
+        <ng-container matColumnDef="cursos">
+            <th mat-header-cell *matHeaderCellDef>Cursos</th>
+            <td mat-cell *matCellDef="let alumno">{{alumno.cursos.join(', ')}}</td>
+        </ng-container>
+        <ng-container matColumnDef="acciones">
+            <th mat-header-cell *matHeaderCellDef>Acciones</th>
+            <td mat-cell *matCellDef="let alumno">
+                <button mat-icon-button color="warn" (click)="onEliminarAlumno(alumno.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <app-inscription-form (alumnoAgregado)="onAlumnoAgregado($event)"></app-inscription-form>
+</div>

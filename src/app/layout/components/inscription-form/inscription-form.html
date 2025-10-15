@@ -1,0 +1,24 @@
+<div class="form-container">
+    <h3>Inscribir Nuevo Alumno</h3>
+    <form [formGroup]="alumnoForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <mat-form-field appearance="fill">
+                <mat-label>Nombre Completo</mat-label>
+                <input matInput formControlName="nombre" placeholder="Ej. Maria Rodriguez">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" type="email" placeholder="Ej. maria@example.com">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Teléfono</mat-label>
+                <input matInput formControlName="telefono" placeholder="Ej. 555-1234">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Cursos (separados por coma)</mat-label>
+                <input matInput formControlName="cursos" placeholder="Ej. Angular, RxJs">
+            </mat-form-field>
+        </div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!alumnoForm.valid">Inscribir Alumno</button>
+    </form>
+</div>

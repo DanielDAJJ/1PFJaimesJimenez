@@ -8,7 +8,7 @@
 html, body { height: 100%; }
 body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-color: #FFF1F1;
+    background-color: #fffafa;
 }
 a{
     text-decoration: none;
@@ -24,5 +24,6 @@ app-root{
     height: 100%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
     gap: 0.5rem;
 }
